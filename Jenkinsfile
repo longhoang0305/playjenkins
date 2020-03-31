@@ -1,7 +1,7 @@
 pipeline {
 
   environment {
-    registry = "192.168.1.2:5000/justme/myweb"
+    registry = "192.168.1.2:5000/myweb"
     dockerImage = ""
   }
 
@@ -26,7 +26,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "https://192.168.1.2:5000", "docker-credential" ) {
+          docker.withRegistry( "", "docker-credential" ) {
             dockerImage.push()
           }
         }
