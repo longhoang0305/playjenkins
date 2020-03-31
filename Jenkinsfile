@@ -26,7 +26,7 @@ pipeline {
     stage('Push Image') {
       steps{
         script {
-          docker.withRegistry( "", "docker-credential" ) {
+          docker.withRegistry( "https://192.168.1.2:5000", "docker-credential" ) {
             dockerImage.push()
           }
         }
