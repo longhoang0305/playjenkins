@@ -19,7 +19,8 @@ spec:
       - image: 192.168.1.81:5000/justme/myweb:1
         imagePullPolicy: Always
         name: myweb
-
+      imagePullSecrets:
+      - name: mydockercredentials
 ---
 apiVersion: v1
 kind: Service
